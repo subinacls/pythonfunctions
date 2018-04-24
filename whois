@@ -1,0 +1,2 @@
+def whois(ipadd): import ipwhois ; return ipwhois.IPWhois(ipadd).lookup_rdap().values()[3].values()[-3] ## whois('8.8.8.8')
+
