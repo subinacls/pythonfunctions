@@ -1,0 +1,13 @@
+def callchicken(): 
+  import urllib2 ## import module
+  ubo = urllib2.build_opener() ## Build opener object
+  ubo.addheaders = [('User-Agent', 'Mozilla/5.0')]  ## they dont like python urllib UA
+  return ubo.open('http://ipchicken.com/').readlines()  ## Call site, return results
+  # callchicken()  ## Example call
+
+def getliveip():
+  import re  # Import module
+  return re.findall('([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})',"".join(callchicken()))  ## Call findall on constructed output
+  # getliveip() ## Example call
+
+
